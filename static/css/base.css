@@ -1,0 +1,26 @@
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+}
+
+h1 {
+    color: reed;
+}
+
+.bookcover {
+    height: 700px ;
+    width: auto;
+}
+
+.imagen {
+    text-align: center;
+}
+
+.usuario {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-left: 50px;
+}

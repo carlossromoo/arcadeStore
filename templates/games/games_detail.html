@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block title %}{{ games.title }}{% endblock title %}
+
+{% block content %}
+    <div class="game-detail">
+        {% if games.cover %}
+            <img class="bookcover" src="{{ games.cover.url }}" alt="{{ games.title }}">
+        {% endif %}
+        <h2><a href="">{{ games.title }}</a></h2>
+        <p> Author: {{ games.author }}</p>
+        <p> Price: {{ games.price }}</p>
+        <div>
+            <h3>Reviews</h3>
+            <ul>
+                {% for review in games.reviews.all %}
+                <li>{{review.review}} ({{review.author}})</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <a href="{% url 'create_review' game_id=games.id%}" class="btn btn-primary">Crear Review</a>
+    </div>
+{% endblock content%}

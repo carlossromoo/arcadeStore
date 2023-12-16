@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+{% block title %}Games{% endblock title %}
+
+{% block content %}
+    {% for game in game_list %}
+        <div>
+            <h2><a href="{{ game.get_absolute_url }}">{{ game.title }}</a></h2>
+        </div>
+    {% endfor %}
+    <a href="{% url 'agregar_game' %}" class="btn btn-primary">Agregar Juego</a>
+{% endblock content%}
